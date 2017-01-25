@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<JoramAdmin>
+  
+  <TcpAdminModule host="localhost" port="15241" name="root" password="root">
+    <property name="connectingTimer" value="60"/>
+  </TcpAdminModule>
+  
+  <InitialContext>
+    <property name="java.naming.factory.initial"
+              value="fr.dyade.aaa.jndi2.client.NamingContextFactory"/>
+    <property name="java.naming.factory.host" value="localhost"/>
+    <property name="java.naming.factory.port" value="16241"/>
+  </InitialContext>
+
+  <TcpConnectionFactory name="cf" host="localhost" port="15241">
+    <jndi name="MyConnectionFactory"/>
+  </TcpConnectionFactory>
+	
+  <User name="guolieqiang" password="glq"/>
+	
+  <Queue name="MyQueue" serverId="0">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="queue1"/>
+  </Queue>
+	
+  <Queue name="MyTopic" serverId="0">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="queue2"/>
+  </Queue>
+  
+  <Topic name="topic" serverId="0">
+    <freeReader/>
+    <freeWriter/>
+    <jndi name="topic1"/>
+  </Topic>
+  
+</JoramAdmin>
+

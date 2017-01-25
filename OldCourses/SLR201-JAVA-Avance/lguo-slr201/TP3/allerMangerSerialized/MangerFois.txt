@@ -1,0 +1,6 @@
+philoManger APP: Les philosophes ont mang¨¦ totalement 12 fois! Et on peux aussi le changer sans effort!
+Philo 0 a mang¨¦ pour 3 fois.
+Philo 1 a mang¨¦ pour 1 fois.
+Philo 2 a mang¨¦ pour 3 fois.
+Philo 3 a mang¨¦ pour 2 fois.
+Philo 4 a mang¨¦ pour 3 fois.

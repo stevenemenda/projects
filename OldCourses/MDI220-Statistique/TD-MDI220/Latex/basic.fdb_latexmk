@@ -1,0 +1,18 @@
+# Fdb version 3
+["dvipdf"] 1477158614 "basic.dvi" "basic.pdf" "basic" 1477158615
+  "basic.dvi" 1477158614 908 7d3a5d799ed3a5963c5210d15c839cb5 "latex"
+  (generated)
+  "basic.pdf"
+["latex"] 1477158614 "basic.tex" "basic.dvi" "basic" 1477158615
+  "/etc/texmf/web2c/texmf.cnf" 1441132542 1464 a4af512f3aaf20a97ae1601d19d817c4 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1417527377 20496 25b54d5a19c40eb011a68431975d83fe ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1417527377 8967 2708205432f6a3ece9206e1f8d1214fb ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1417527377 31088 8e088e958dd0258cc5414842768a3a00 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1417527377 31088 8e088e958dd0258cc5414842768a3a00 ""
+  "/var/lib/texmf/web2c/pdftex/latex.fmt" 1441132558 3803999 17b272c10c162bf99daf19e9901c0df2 ""
+  "basic.aux" 1477158614 8 a94a2480d3289e625eea47cd1b285758 ""
+  "basic.tex" 1477158614 698 e3a83876c99fccc70a67317774044a2f ""
+  (generated)
+  "basic.dvi"
+  "basic.aux"
+  "basic.log"

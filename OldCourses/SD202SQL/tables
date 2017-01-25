@@ -1,0 +1,18 @@
+TABLE_NAME		       TABLE_TYPE
+------------------------------ -----------
+A			       SYNONYM
+ACHATS			       TABLE
+B			       SYNONYM
+BONS_BUVEURS		       VIEW
+BUVEURS 		       TABLE
+BUVEURS_ACHATS		       VIEW
+BUVEURS_ASEC		       VIEW
+P			       SYNONYM
+PRODUCTEURS		       TABLE
+R			       SYNONYM
+RECOLTES		       TABLE
+
+TABLE_NAME		       TABLE_TYPE
+------------------------------ -----------
+V			       SYNONYM
+VINS			       TABLE

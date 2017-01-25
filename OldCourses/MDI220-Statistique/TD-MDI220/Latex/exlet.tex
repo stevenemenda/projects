@@ -1,0 +1,30 @@
+\documentclass[12pt]{letter}               % letter class, 12 points
+\usepackage{fullpage}                      % fullpage gives 1-in margins
+%\renewcommand{\today}{June 30, 2001}      % use to override default date
+ 
+%\address{555 Main St.\\Sometown, NY 12345} % return address
+
+\signature{My Name\\My Title}              % name for signature 
+%\longindentation=0pt                       % use to make closing flush left
+%\let\raggedleft\raggedright                % use to make date flush left
+  
+\begin{document}                           % End of preamble
+ 
+\begin{letter}{Mr.~Smith\\ President,      % begin letter by giving
+   Big Name Co.\\Bigburg, MI 45678}        %   recipient's name and  address
+\opening{Dear Mr.~Smith:}                  % name for salutation 
+ 
+This is the letter class.  It provides a format for standard parts
+of a business letter.  As you can see, it uses many commands that
+do not exist in the article, report, and book classes.
+ 
+This is a new paragraph.
+ 
+\closing{Sincerely yours,}                 % Format for the closing.
+                                           % The name is taken from
+                                           % \signature declaration.
+\cc{My Boss}                               % Name(s) of those receiving copies
+\encl{An important paper\\Another one}     % List of enclosures
+  
+\end{letter}                               % You must always \end
+\end{document}                             % what you \begin

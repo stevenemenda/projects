@@ -1,0 +1,20 @@
+
+
+CREATE OR REPLACE PROCEDURE choix_experts AS
+--DECLARE
+   cursor V_CUR is select * from vins
+              where nv in (select nv from recoltes, producteurs
+                           where region='Alsace' and producteurs.np=recoltes.np)
+              order by nv;
+BEGIN
+   for V_Ligne in V_CUR loop
+       IF V_Ligne.mill in (1976, 1978, 1983) THEN
+	  INSERT INTO TEMP
+		VALUES (V_Ligne.nv, V_Ligne.cru || '(' || to_char(V_Ligne.mill) || ')', 'Récolte exeptionelle !');
+       ELSE
+          INSERT INTO TEMP
+		VALUES (V_Ligne.nv, V_Ligne.cru || '(' || to_char(V_Ligne.mill) || ')', 'RAS !');
+       END IF;
+   end loop;
+END;
+/

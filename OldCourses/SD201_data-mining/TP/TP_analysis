@@ -1,0 +1,12 @@
+1. I have 20 documents in total, and I have 14 documents for trainning set, and 6 documents for testing documents
+ the source is from www.nutrition-and-you.com/apple-fruit.html
+ www.fruitsinfo.com/apples.php,www.apple.com/about/, etc.
+
+
+2.  
+k: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+Accuracy: [0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002, 0.40000000000000002]
+the k changes but the the accuracy dose not change!
+
+why accuracy does not change, I think it's because the number of documents is too small,
+
