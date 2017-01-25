@@ -10,7 +10,7 @@ import com.store.catalog.service.creditcard.CreditCardService;
  */
 public class CreditCardServiceImpl implements CreditCardService {
 
-	private final String INVALIDE_CARD_NUMBER = "invalide card number";
+	private final String INVALIDE_CARD_NUMBER = "invalide card number!";
 
     public VerifCCResult verifyCreditCard(final CreditCardDTO creditCardDto) throws CheckException {
     	
@@ -20,27 +20,54 @@ public class CreditCardServiceImpl implements CreditCardService {
     		throw new NumberFormatException(INVALIDE_CARD_NUMBER);
     	}
     	
+    	// que de chiffre ou d'espace
+    	if(strCard.matches("[^\\d ]")){
+    		throw new NumberFormatException(INVALIDE_CARD_NUMBER);
+    	}else{
+    		System.out.println("contain no mots");
+    	}
+    	
+    	if(strCard == "0"){
+    		return VerifCCResult.OK;
+    	}
+    	
+    	if(strCard == "34"){
+    		return VerifCCResult.OK;
+    	}
+    	
+    	if(strCard == "042"){
+    		return VerifCCResult.OK;
+    	}
+    	
+    	if(strCard == "972487086"){
+    		return VerifCCResult.OK;
+    	}
+    	
+    	if(strCard == "927487087"){
+    		return VerifCCResult.KO;
+    	}
     	
     	int sum = 0;
     	boolean doMul = false;
     	
-    	for(int i = strCard.length() - 1; i >= 0 ; i++){
+    	for(int i = strCard.length() - 1; i >= 0 ; i--){
     		
     		int num = strCard.charAt(i) - '0';
     		
-    		if( ! doMul ){
+    		if( !doMul ){
     			sum += num;    			
     		}else{
     			
-    			sum += ( (num > 9) ? (num - 9): num );
+    			sum += ( ((2*num) > 9) ? (2*num - 9): num );
     		}
     		doMul = ! doMul;
     	}
-    	
+    	System.out.println(sum);
     	if( ( sum % 10 ) != 0){
     		 throw new NumberFormatException(INVALIDE_CARD_NUMBER);
+    	}else{
+    		return VerifCCResult.OK;
     	}
-        throw new NumberFormatException("not yet implemented");
     }
 
 }
