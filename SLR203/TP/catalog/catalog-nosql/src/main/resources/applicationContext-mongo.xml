@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/batch"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/data/mongo
+                http://www.springframework.org/schema/data/mongo/spring-mongo-1.3.xsd">
+
+
+<!-- Configuration when using replicaSet -->
+<!-- 	<mongo:mongo id="mongo" replica-set="${mongo.hosts}"/> -->
+    
+
+	<beans:bean id="mongo" class="com.store.catalog.mongo.config.CatalogMongoFactoryBean">
+		<beans:property name="host" value="${mongo.host}" />
+		<beans:property name="portAsString" value="${mongo.port}" />
+	</beans:bean>
+
+	<mongo:db-factory id="mongoDbFactory"
+                  dbname="${mongo.db.name}"
+                  mongo-ref="mongo"
+                  />
+
+
+
+</beans:beans>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:elasticsearch="http://www.pilato.fr/schema/elasticsearch"			
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/util
+			http://www.springframework.org/schema/util/spring-util.xsd
+ 			http://www.springframework.org/schema/context 
+ 			http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.pilato.fr/schema/elasticsearch 
+			http://www.pilato.fr/schema/elasticsearch/elasticsearch-0.3.xsd">
+
+
+	<context:component-scan base-package="com.store.catalog.search" />
+
+    <bean name="jacksonMapper"
+                class="com.fasterxml.jackson.databind.ObjectMapper" />
+
+	<context:property-placeholder location="classpath:esclient-transport-test.properties" />
+
+
+	<util:properties id="esproperties"
+    location="classpath:esclient-transport-test.properties"/>
+
+	<elasticsearch:node id="esNode" properties="esproperties"  />
+	
+    <bean id="esClient"
+        class="fr.pilato.spring.elasticsearch.ElasticsearchClientFactoryBean" >
+        <property name="node" ref="esNode" />
+		<property name="mappings">
+			<util:list>
+				<value>${es.index.name.catalogdb}/${es.index.type.phone}</value>
+			</util:list>
+		</property>
+    </bean>
+
+</beans>

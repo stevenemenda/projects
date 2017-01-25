@@ -1,0 +1,21 @@
+network.host: 0.0.0.0
+
+
+node.name: "docker.node.01"
+
+path.data: /data/data
+path.logs: /data/log
+path.plugins: /data/plugins
+path.work: /data/work
+
+index.number_of_shards: 1
+index.number_of_replicas: 1
+
+http.port: 8200
+
+action.auto_create_index: true
+
+# cluster.name: <name>_dwh_integration
+# node.name: es_edi_node_01
+# discovery.zen.ping.multicast.enabled: false
+# discovery.zen.ping.unicast.hosts: ["127.0.0.1,127.0.0.1:8210"]

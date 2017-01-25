@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+
+		<filter class="com.store.catalog.tech.log.SFFilter" />
+
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %thread %-5level %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="BUSINESS_LAYER_AUDIT"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>./target/business.layer.log</file>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>tests.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>3</maxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %thread %-5level %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="SYSTEM_FAILURE_ERRORS"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+		<filter class="com.store.catalog.tech.log.SFFilter" />
+
+		<file>./target/system.failure.log</file>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>system.failure.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>3</maxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>5MB</maxFileSize>
+		</triggeringPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %msg%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="com.store.catalog." level="INFO" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="SYSTEM_FAILURE_ERRORS" />		
+	</logger>
+
+
+	<logger name="com.store.catalog.service.supervision.PetstoreAspect" level="INFO"
+		additivity="false">
+		<appender-ref ref="BUSINESS_LAYER_AUDIT" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+
+	<logger name="org.springframework" level="ERROR" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+
+
+	<logger name="org.springframework.context">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="ERROR" />
+	</logger>
+
+	<!-- Strictly speaking, the level attribute is not necessary since -->
+	<!-- the level of the root level is set to DEBUG by default. -->
+	<root level="ERROR">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>

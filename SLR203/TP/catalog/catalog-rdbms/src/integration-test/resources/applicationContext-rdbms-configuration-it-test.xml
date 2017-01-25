@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:elasticsearch="http://www.pilato.fr/schema/elasticsearch"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+	    http://www.pilato.fr/schema/elasticsearch http://www.pilato.fr/schema/elasticsearch/elasticsearch-0.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+        http://www.springframework.org/schema/tx 
+       	http://www.springframework.org/schema/tx/spring-tx-4.1.xsd	
+		">
+
+
+	<context:component-scan base-package="com.store.catalog" />
+
+	<aop:aspectj-autoproxy />
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="dozerMapper" class="org.dozer.DozerBeanMapper" />
+
+	<!-- for visibility in spring files configuration i.e. environment for datasources
+	<context:property-placeholder location="file:${properties.location}" />
+	-->
+    <context:property-placeholder location="classpath:jdbc-postgresql.properties" />
+
+	<!-- for visibility with @Value tag -->
+	<bean id="appProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<list>
+                <value>classpath:jdbc-postgresql.properties</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+</beans>

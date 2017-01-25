@@ -1,0 +1,18 @@
+
+
+path.data: /data/data
+path.logs: /data/log
+path.plugins: /data/plugins
+path.work: /data/work
+
+index.number_of_shards: 3
+index.number_of_replicas: 1
+
+cluster.name: catalog_docker
+node.name: "docker.node.01"
+http.port: 10200
+transport.tcp.port: 10300
+action.auto_create_index: true
+
+discovery.zen.ping.multicast.enabled: false
+discovery.zen.ping.unicast.hosts: ["192.168.99.100"]

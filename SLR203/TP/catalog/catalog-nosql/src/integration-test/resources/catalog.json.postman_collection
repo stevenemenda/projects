@@ -1,0 +1,92 @@
+{
+	"id": "14ae86f8-d440-d8a1-5592-ec55e210c3e4",
+	"name": "catalog",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "36059adf-94ae-a15f-79b9-0fe30707f361",
+			"name": "admin",
+			"description": "",
+			"order": [
+				"15c004a1-092a-6d52-67c1-790160f9e248"
+			],
+			"owner": 0
+		},
+		{
+			"id": "c7fd244e-2489-32db-c627-dcbf4a9506c1",
+			"name": "queries",
+			"description": "",
+			"order": [
+				"296dcc29-fb03-e574-94e6-1df4bfcf0d2f",
+				"75442aec-19ab-d549-a26d-d383e0f9fb2e"
+			],
+			"owner": 0
+		}
+	],
+	"timestamp": 1446846526786,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "15c004a1-092a-6d52-67c1-790160f9e248",
+			"headers": "",
+			"url": "{{host}}:{{port}}/_cat",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1446848398655,
+			"name": "cat api",
+			"description": "",
+			"collectionId": "14ae86f8-d440-d8a1-5592-ec55e210c3e4",
+			"responses": []
+		},
+		{
+			"id": "296dcc29-fb03-e574-94e6-1df4bfcf0d2f",
+			"headers": "",
+			"url": "{{host}}:{{port}}/catalog/_search",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1446936293641,
+			"name": "match_all",
+			"description": "",
+			"collectionId": "14ae86f8-d440-d8a1-5592-ec55e210c3e4",
+			"responses": [],
+			"rawModeData": "{\n    \"query\" : {\n        \"match_all\" : {}\n    }\n}"
+		},
+		{
+			"id": "75442aec-19ab-d549-a26d-d383e0f9fb2e",
+			"headers": "",
+			"url": "{{host}}:{{port}}/catalog/_search?from=1&size=",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1447025065325,
+			"name": "match_phrase_prefixe",
+			"description": "",
+			"collectionId": "14ae86f8-d440-d8a1-5592-ec55e210c3e4",
+			"responses": [],
+			"rawModeData": "{\n    \"query\": {\n        \"match_phrase_prefix\": {\n            \"name\": \"MOTOR\"\n        }\n    }\n}"
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"0995558dd12c1e021f79ef906a8fab5730b504e7"}}
+{ "age": 0, "imageUrl": "img/phones/motorola-xoom-with-wi-fi.0.jpg",    "name": "Motorola XOOM with Wi-Fi",    "snippet": "The Next, Next Generation Experience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"afba15cd0e88b00084a2adf6324f4e155a189733"}}
+{ "age": 1, "imageUrl": "img/phones/motorola-xoom.0.jpg",    "name": "MOTOROLA XOOM",    "snippet": "The Next, Next Generation Experience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"9e384009a8dac38fa4d9de5d6bb677ffd1fdda36"}}
+{ "age": 2, "imageUrl": "img/phones/motorola-atrix-4g.0.jpg",    "name": "MOTOROLA ATRIX 4G",    "snippet": "MOTOROLA ATRIX 4G the world's most powerful smartphone."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"ab6e84d571af7c7932e9e850feb2e69a4b42ace7"}}
+{ "age": 3, "imageUrl": "img/phones/dell-streak-7.0.jpg",    "name": "Dell Streak 7",    "snippet": "Introducing Dell Streak 7. Share photos, videos and movies together. Its small enough to carry around, big enough to gather around."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"39b1f14cec2c8563700f59b23871614c03e0629e"}}
+{ "age": 4,  "imageUrl": "img/phones/samsung-gem.0.jpg",    "name": "Samsung Gem",    "snippet": "The Samsung Gem brings you everything that you would expect and more from a touch display smart phone  more apps, more features and a more affordable price."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"1c434386c5fed1322ee060904cced2c797b9f241"}}
+{ "age": 5,  "imageUrl": "img/phones/dell-venue.0.jpg",    "name": "Dell Venue",    "snippet": "The Dell Venue; Your Personal Express Lane to Everything"  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"7c1f3d3b5bb9ed8154189e664ae03163e3d63802"}}
+{ "age": 6, "imageUrl": "img/phones/nexus-s.0.jpg",    "name": "Nexus S",    "snippet": "Fast just got faster with Nexus S. A pure Google experience, Nexus S is the first phone to run Gingerbread (Android 2.3), the fastest version of Android yet."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"5003590ed578ab46719e6e835d165576069ccc63"}}
+{ "age": 7,  "imageUrl": "img/phones/lg-axis.0.jpg",    "name": "LG Axis",    "snippet": "Android Powered, Google Maps Navigation, 5 Customizable Home Screens"  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"6ff5538f2f6d7bd9c2d7de00fcb060788ec3141d"}}
+{ "age": 8, "imageUrl": "img/phones/samsung-galaxy-tab.0.jpg",    "name": "Samsung Galaxy Tab",    "snippet": "Feel Free to Tab. The Samsung Galaxy Tab brings you an ultra-mobile entertainment experience through its display, high-power processor and Adobe Flash Player compatibility."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"394eee7c243180017985c16f68639f15f7339993"}}
+{ "age": 9, "imageUrl": "img/phones/samsung-showcase-a-galaxy-s-phone.0.jpg",    "name": "Samsung Showcase a Galaxy S phone",    "snippet": "The Samsung Showcase delivers a cinema quality experience like youve never seen before. Its innovative 4 touch display technology provides rich picture brilliance, even outdoors"  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"daf53b2f149be52e7513e0e62d3578e52768459c"}}
+{ "age": 10, "imageUrl": "img/phones/droid-2-global-by-motorola.0.jpg",    "name": "DROID 2 Global by Motorola",    "snippet": "The first smartphone with a 1.2 GHz processor and global capabilities."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"fce2786d52ff93948f5ad2e87d2d619eacf9cf5b"}}
+{ "age": 11, "imageUrl": "img/phones/droid-pro-by-motorola.0.jpg",    "name": "DROID Pro by Motorola",    "snippet": "The next generation of DOES."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"95039cf969e5601f379f8d8e3c544eec410bb43c"}}
+{ "age": 12, "imageUrl": "img/phones/motorola-bravo-with-motoblur.0.jpg",    "name": "MOTOROLA BRAVO with MOTOBLUR",    "snippet": "An experience to cheer about."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"f81941cc37f2267798f99233238808762cb74da4"}}
+{ "age": 13, "imageUrl": "img/phones/motorola-defy-with-motoblur.0.jpg",    "name": "Motorola DEFY with MOTOBLUR",    "snippet": "Are you ready for everything life throws your way?"  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"8596122f02cc676549b5f36ed962f02e39c3255d"}}
+{ "age": 14, "imageUrl": "img/phones/t-mobile-mytouch-4g.0.jpg",    "name": "T-Mobile myTouch 4G",    "snippet": "The T-Mobile myTouch 4G is a premium smartphone designed to deliver blazing fast 4G speeds so that you can video chat from practically anywhere, with or without Wi-Fi."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"b1aed9b01eb574da84587a17ea65e818279b5517"}}
+{ "age": 15,  "imageUrl": "img/phones/samsung-mesmerize-a-galaxy-s-phone.0.jpg",    "name": "Samsung Mesmerize a Galaxy S phone",    "snippet": "The Samsung Mesmerize delivers a cinema quality experience like youve never seen before. Its innovative 4 touch display technology provides rich picture brilliance,even outdoors"  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"3cef1d13954bdeed0ce3ecc1fbf782f85e280134"}}
+{ "age": 16, "imageUrl": "img/phones/sanyo-zio.0.jpg",    "name": "SANYO ZIO",    "snippet": "The Sanyo Zio by Kyocera is an Android smartphone with a combination of ultra-sleek styling, strong performance and unprecedented value."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"a6bb03d7d6c50670716f9ce8d1c9363340055885"}}
+{ "age": 17,  "imageUrl": "img/phones/samsung-transform.0.jpg",    "name": "Samsung Transform",    "snippet": "The Samsung Transform brings you a fun way to customize your Android powered touch screen phone to just the way you like it through your favorite themed Sprint ID Service Pack."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"f030c9d73afb6488bd0020a410004fd2521117ce"}}
+{ "age": 18,  "imageUrl": "img/phones/t-mobile-g2.0.jpg",    "name": "T-Mobile G2",    "snippet": "The T-Mobile G2 with Google is the first smartphone built for 4G speeds on T-Mobile's new network. Get the information you need, faster than you ever thought possible."  }
+{"create" : {"_index":"catalog", "_type":"phone", "_id":"3126911e284b6a253fc561572b16c7951af37900"}}
+{ "age": 19,  "imageUrl": "img/phones/motorola-charm-with-motoblur.0.jpg",    "name": "Motorola CHARM with MOTOBLUR",    "snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service."  }

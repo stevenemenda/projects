@@ -1,0 +1,10 @@
+{
+  "phone" : {
+    "properties" : {
+      "age" : {"type" : "integer", "store" : "yes","index" : "not_analyzed"},
+      "name" :{"type" : "string" , "store" : "yes","index" : "analyzed"},
+      "snippet" :{"type" : "string" , "store" : "yes","index" : "analyzed"},
+      "imageUrl" :{"type" : "string" , "store" : "yes","index" : "analyzed"}
+    }
+  }
+}

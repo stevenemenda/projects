@@ -1,0 +1,62 @@
+# git commands
+git pull origin jmaghreb-2
+
+https://help.github.com/articles/renaming-a-repository/
+
+
+# DVCS - USINE LOGICIELLE
+http://en.wikipedia.org/wiki/List_of_revision_control_software#Client-server_model
+http://en.wikipedia.org/wiki/List_of_revision_control_software
+http://java.dzone.com/articles/10-commandments-good-source
+http://blog.crisp.se/2013/02/05/yassalsundman/continuous-delivery-vs-continuous-deployment
+http://java.dzone.com/articles/what-your-branching-model
+http://www.bradapp.com/acme/branching/branch-structs.html
+http://books.google.fr/books?id=IcSxD5LJAIgC&pg=PA54&lpg=PA54&dq=mainline+branching+model&source=bl&ots=6sPqbOiZy0&sig=tLYijMmIdLIHeQc6bPi0yB8pDr8&hl=en&sa=X&ei=ErD6UtPdJ6ie0QWAk4CwBQ&ved=0CGEQ6AEwBjgK#v=onepage&q=mainline%20branching%20model&f=false
+http://www.ucmcentral.com/ucm_branch.htm
+http://vance.com/steve/perforce/Branching_Strategies.html
+
+http://martinfowler.com/articles/continuousIntegration.html
+http://www.thoughtworks.com/continuous-integration
+en.wikipedia.org/wiki/Continuous_integration
+http://www.infoq.com/articles/DVCS-Enterprise
+
+
+# JAVA/JEE/Spring/Hibernate
+http://docs.spring.io/spring/docs/3.0.x/reference/overview.html
+http://docs.spring.io/spring/docs/3.0.x/reference/beans.html
+http://en.wikipedia.org/wiki/Object-relational_mapping
+http://tadtech.blogspot.fr/2007/02/hibernate-when-is-inversetrue-and-when.html
+http://www.mkyong.com/hibernate/inverse-true-example-and-explanation/
+http://www.baeldung.com/2011/12/13/the-persistence-layer-with-spring-3-1-and-jpa/
+
+http://docs.spring.io/spring-data/jpa/docs/1.4.3.RELEASE/reference/html/jpa.repositories.html
+
+
+# ELASTIC-SEARCH
+https://github.com/dadoonet/spring-elasticsearch
+https://www.elastic.co/guide/en/elasticsearch/client/java-api/1.4/prefix-filter.html
+
+#REST
+##Json Formatter : http://jsonformat.com/#jsondataurllabel
+##http://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/
+##Probleme avec le mapping des listes encapsulées dans les réponses : http://stackoverflow.com/questions/25185913/json-output-in-jersey-2-x-fails
+
+	
+# WEB SERVICES
+	http://www.freeformatter.com/xsd-generator.html#ad-output
+	http://www.xinotes.org/notes/note/1868/
+
+Plugins Eclipse
+http://moreunit.sourceforge.net/update-site/
+http://www.petrikainulainen.net/programming/maven/integration-testing-with-maven/
+
+
+# Livres
+The art of application testing. Y. Moyneaux, Oreilly Ed. , 2009
+Growing object oriented software, Guided by tests - Steeve Freeman, Nat Pryce - Addison Wesley Ed.- Pearson Eduction, 2010
+Java Persistence with Hibernate, Christian Bauer and Gavin King, Manning Ed., 2007 
+
+REST UNIT TEST
+http://stackoverflow.com/questions/28614846/how-to-in-memory-unit-test-spring-jersey/28620966#28620966
+https://dzone.com/articles/how-test-rest-api-junit
+https://jira.kuali.org/browse/KSENROLL-14982

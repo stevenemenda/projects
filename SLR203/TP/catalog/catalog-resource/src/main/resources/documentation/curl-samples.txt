@@ -1,0 +1,163 @@
+# ***************************************** #
+# ********** CUSTOMER MANAGEMENT ********** #
+# ***************************************** #
+
+# ********** add customer
+curl -i http://localhost:8080/catalog-rest-mvc/customer-management/customer/add -H "Content-Type: application/json" -X POST -d '
+{ "address" : { "city" : "restCity",
+      "country" : "Restfulia",
+      "state" : "restState",
+      "street1" : "111 Ritherdon Road",
+      "street2" : "",
+      "zipcode" : "56000"
+    },
+  "creditCard" : null,
+  "email" : "rest@gmail.com",
+  "firstname" : "restFirstName1",
+  "lastname" : "restLastName1",
+  "password" : "toto",
+  "telephone" : "012020202020"
+}' 
+
+
+# ********** update customer
+curl -i http://localhost:8080/catalog-rest-mvc/customer-management/customer/update/4 -H "Content-Type: application/json" -X PUT -d '
+{ "address" : { "city" : "restCity-MDF",
+      "country" : "Restfulia-MDF",
+      "state" : "restState-MDF",
+      "street1" : "111 Ritherdon Road-MDF",
+      "street2" : "street2 MDF",
+      "zipcode" : "56001"
+    },
+  "creditCard" : null,
+  "email" : "rest-mdf@gmail.com",
+  "firstname" : "rest-MdfFirstName1",
+  "lastname" : "restMdfLastName1",
+  "password" : "toto",
+  "telephone" : "01202020201",
+  "id" : 4  
+}'
+
+# ********** delete customer
+curl -i http://localhost:8080/catalog-rest-mvc/customer-management/customer/delete/4 -H "Content-Type: application/json" -X DELETE -d
+
+
+
+# ***************************************** #
+# ********** CATEGORY MANAGEMENT ********** #
+# ***************************************** #
+
+# ********** add category
+curl -i http://localhost:10080/catalog/category -H "Content-Type: application/json" -X POSTT -d '
+{"name":"Dinosorus","description":"prehistoric animals",
+	"products":null}' 
+
+
+# ********** update category
+curl -i http://localhost:8080/catalog/category -H "Content-Type: application/json" -X PUT -d '
+{"id":6,"name":"Dinosorus","description":"prehistoric animals updated",
+	"products":null}' 
+
+
+# ********** delete category
+curl -i http://localhost:8080/catalog/category/6 -H "Content-Type: application/json" -X DELETE
+
+
+
+# ***************************************** #
+# ********** PRODUCT MANAGEMENT ********** #
+# ***************************************** #
+
+# ********** add product
+curl -i http://localhost:8080/catalog/product -H "Content-Type: application/json" -X POST -d '
+{"name":"AngelfishBis","description":" ANOTHER Saltwater fish from Australia", 
+	"category" : { "id" : 1},
+	"items":null}' 
+
+
+# ********** update product
+curl -i http://localhost:8080/catalog/product -H "Content-Type: application/json" -X PUT -d '
+{"id":17,"name":"AngelfishUpdated","description":" ANOTHER UPDATED Saltwater fish from Australia",
+	"category" : { "id" : 1},
+	"items":null}' 
+
+
+# ********** delete product
+curl -i http://localhost:8080/catalog/product/16 -H "Content-Type: application/json" -X DELETE
+
+
+# ***************************************** #
+# ********** ITEM MANAGEMENT ********** #
+# ***************************************** #
+
+# ********** add item
+curl -i http://localhost:8080/catalog/item -H "Content-Type: application/json" -X POST -d  '
+{"name":"LargePiouPiou","unitCost":102.0,"imagePath":"bird3.jpg","product":{ "id" : 15}}' 
+
+
+
+# ********** update item
+curl -i http://localhost:8080/catalog/item -H "Content-Type: application/json" -X PUT -d '
+{"id":33,"name":"LargePiouUpdated","unitCost":103.0,"imagePath":"bird3Mdf.jpg","product":{ "id" : 15}}'
+
+# ********** delete item
+curl -i http://localhost:8080/catalog/item/32 -H "Content-Type: application/json" -X DELETE
+
+
+# ********** add searchableItem
+curl -i http://localhost:20080/catalog/admin/item -H "Content-Type: application/json" -X POST -d '
+{
+"age": 20,
+"imageUrl": "img/phones/image20.jpg",
+"name": "item-JSFIUEAOJF-20",
+"snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service."
+}
+'
+
+
+# ********** update searchableItem
+curl -i http://localhost:20080/catalog/admin/item -H "Content-Type: application/json" -X PUT -d '
+{
+"_id":"094e2a8696809e01d08fa077afec3ae386bd8cc4",
+"age": 20,
+"imageUrl": "img/phones/image20.jpg",
+"name": "item-JSFIUEAOJF-20",
+"snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service. - MDF"
+}
+'
+
+# ********** delete searchableItem
+curl -i http://localhost:20080/catalog/admin/item/094e2a8696809e01d08fa077afec3ae386bd8cc4 -H "Content-Type: application/json" -X DELETE
+
+curl -i http://localhost:20080/catalog/admin/item/094e2a8696809e01d08fa077afec3ae386bd8cc4
+
+
+
+
+
+
+{"name":"Dinosorus","description":"Any of numerous cold-blooded aquatic vertebrates characteristically having fins, gills, and a streamlined body",
+	"products":[null,
+		{"id":1,"name":"Angelfish","description":"Saltwater fish from Australia",
+			"items":[null,
+				{"id":1,"name":"Large","unitCost":10.0,"imagePath":"fish1.jpg"},
+				{"id":2,"name":"Thootless","unitCost":10.0,"imagePath":"fish1.jpg"}]},
+		{"id":2,"name":"Tiger Shark","description":"Saltwater fish from Australia",
+			"items":[null,null,null,
+				{"id":3,"name":"Spotted","unitCost":12.0,"imagePath":"fish4.jpg"},
+				{"id":4,"name":"Spotless","unitCost":12.0,"imagePath":"fish4.jpg"}]},
+		{"id":3,"name":"Koi","description":"Freshwater fish from Japan",
+			"items":[null,null,null,null,null,
+				{"id":5,"name":"Male Adult","unitCost":12.0,"imagePath":"fish3.jpg"},
+				{"id":6,"name":"Female Adult","unitCost":12.0,"imagePath":"fish3.jpg"}]},
+		{"id":4,"name":"Goldfish","description":"Freshwater fish from China",
+			"items":[null,null,null,null,null,null,null,
+				{"id":7,"name":"Male Puppy","unitCost":12.0,"imagePath":"fish2.jpg"},
+				{"id":8,"name":"Female Puppy","unitCost":12.0,"imagePath":"fish2.jpg"}]}]}
+
+
+
+{"id":1,"name":"Angelfish","description":"Saltwater fish from Australia",
+	"items":[null,
+		{"id":1,"name":"Large","unitCost":10.0,"imagePath":"fish1.jpg"},
+		{"id":2,"name":"Thootless","unitCost":10.0,"imagePath":"fish1.jpg"}]}

@@ -1,0 +1,80 @@
+
+############ POSTGRESQL ##############
+cygrunsrv -S cygserver
+initdb -D /usr/share/postgresql/data
+postgres -D /usr/share/postgresql/data &
+
+pg_ctl  -D /usr/share/postgresql/data  start
+pg_ctl  -D /usr/share/postgresql/data  stop
+
+
+
+
+psql -d catalogdb -U pguser  -p 5432  -h  192.168.99.100
+Quit Ctrl Z
+
+
+*La page web moderne
+
+
+*Base de données
+
+** Mise en place d'une base embarquée
+*** Classe de test abstraite
+*** Configuration xml
+***
+
+
+** Test de la méthode like
+*** En faisant une erreur dans le nommage de la méthode
+*** En mettant la bonne méthode
+*** Pourquoi des tests unitaires alors que l'implémentation est fournie par le framework
+
+** Mise en place d'une base d'intégration
+*** Avec Docker
+*** Avec un test maven d'intégration
+**** dans l'ide
+**** avec maven : install -P integration-test
+
+* Revenons au search
+** Quel est le retour d'une base de données ?
+- uniquement les items
+- Pas la possibilité de faire simplement des recherches dans les tables
+
+*ElasticSearch
+
+** Search simple
+*** La requête en postman
+*** Test unitaire
+*** Test integration (avec Docker)
+**** Executer le test avec des données vérolés
+**** Corriger
+**** Recréer l'index : ./delete-insert-mapping.sh
+**** Recharger les données : curl -XPOST 'http://192.168.99.100:8200/_bulk' --data-binary  @phones.json
+**** Executer le test avec des données correctes
+***** dans l'ide
+***** avec maven : install -P integration-test
+***** en mode web : http://localhost:20080/elastic/item/word/Samsung
+
+** Search prefixe
+*** La requête en postman
+***** en mode web
+****** sans oublier la pagination sinon ça plante
+****** http://localhost:20080/elastic/item/prefixe/Sams?from=0&size=3
+
+
+** reporter la configuration en prod
+
+
+** Test avec une application web
+
+
+*Mongo
+start local mongo : mongod --dbpath ./data/
+connextion : mongo 127.0.0.1:27017
+show dbs
+use catalog_db
+show collections
+db.createCollection("catalog")
+db.phones.find()
+db.phones.find({"_id":"094e2a8696809e01d08fa077afec3ae386bd8cc4"})

@@ -1,0 +1,20 @@
+
+
+Renommer services search et match d'ES
+Renommer packages
+
+
+# TP
+Passer en tomcat8
+Image a la connexion à Tomcat
+Mettre lien pour récupérer en ligne version JEE Eclipse
+
+
+Communiquer plan aux profs
+Agilité, TDD, Mocks
+Usine logicielle, SCM
+Frameworks (IOC) et ORM
+Services
+
+
+Mettre des "throws Exception" dans tous les méthodes des classes de tests
