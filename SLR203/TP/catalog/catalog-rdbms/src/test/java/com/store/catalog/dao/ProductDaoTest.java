@@ -4,7 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 import org.junit.After;
@@ -13,7 +15,9 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.store.catalog.model.Category;
+import com.store.catalog.model.Item;
 import com.store.catalog.model.Product;
+import com.store.catalog.utils.ConstantUtils;
 
 import static com.store.catalog.utils.ConstantUtils.*;
 
@@ -42,43 +46,132 @@ public class ProductDaoTest extends AbstractBaseDaoTestCase {
 
     @Test
     public void testCreateProduct() throws Exception {
-        throw new Exception("not yet implemented");
+        productDao.save(product);
+    	assertTrue("primary key assigned", product.getId() != null);
     }    
    
     @Test
     public void testUpdateProduct() throws Exception {
-        throw new Exception("not yet implemented");
+        productDao.save(product);
+        
+    	product.setName(PRODUCT_NAME + "MDF");
+    	product.setDescription(PRODUCT_DESCRIPTION + "MDF");
+    	product.setCategory(getCategory());
+    	
+    	productDao.save(product);
+    	
+    	Product productMdf = productDao.findOne(product.getId());
+    	assertEquals(product, productMdf);
     }    
     
     
     @Test
     public void testGetProduct() throws Exception {
-        throw new Exception("not yet implemented");
+
+    	productDao.save(product);
+    	
+    	Product product2 = productDao.findOne(product.getId());
+    	
+    	assertNotNull(product2);
+    	assertEquals(product,  product2);
     }   
 
     
     @Test
     public void testRemoveProduct() throws Exception {
-        throw new Exception("not yet implemented");
+
+    	productDao.save(product);
+    	
+    	Product product2 = productDao.findOne(product.getId());
+    	
+    	assertNotNull(product2.getId());
+    	assertEquals(product,  product2);
+    	
+    	productDao.delete(product.getId());
+    	
+    	assertTrue(getIterableSize(productDao.findAll()) == 0);
     }
 
     
     
     @Test
     public void testGetProducts() throws Exception {
-        throw new Exception("not yet implemented");
+    	
+    	productDao.save(product);
+    	
+    	Iterable<Product> lst = productDao.findAll();
+    	
+    	assertTrue(getIterableSize(lst) == 1);
+    	
+    	Product product2 = new Product();
+    	product2.setId(new Random().nextLong());
+    	product2.setName(PRODUCT_NAME + "MDF");
+    	product2.setDescription(PRODUCT_DESCRIPTION + "MDF");
+    	product2.setCategory(getCategory2());
+    	productDao.save(product2);
+    	
+    	assertTrue(getIterableSize(productDao.findAll()) == 2);
     }    
     
 
     @Test
     public void testGetProductsWithCategoryId() throws Exception {
-        throw new Exception("not yet implemented");
+        
+    	productDao.save(product);
+    	
+    	Product product2 = new Product();
+    	product2.setId(new Random().nextLong());
+    	product2.setName(PRODUCT_NAME + "MDF");
+    	product2.setDescription(PRODUCT_DESCRIPTION + "MDF");
+    	product2.setCategory(product.getCategory());
+    	productDao.save(product2);
+    	
+    	Product product3 = new Product();
+    	product3.setId(new Random().nextLong());
+    	product3.setName(PRODUCT_NAME + "MDF");
+    	product3.setDescription(PRODUCT_DESCRIPTION + "MDF");
+    	product3.setCategory(getCategory2());
+    	productDao.save(product3);
+    	
+    	Iterable<Product> iter = productDao.findByCategoryId(product.getCategory().getId());
+    	List<Product> lst = new ArrayList<Product>();
+    	for(Product obj:iter){
+    		lst.add(obj);
+    	}
+    	assertTrue(getIterableSize(iter) == 2);
+    	assertEquals(product, lst.get(0));
+    	assertEquals(product2, lst.get(1));
     }    
 
     
     @Test
     public void testGetProductsByCategoryName() throws Exception {
-        throw new Exception("not yet implemented");
+    	
+    	productDao.save(product);
+    	
+    	Product product2 = new Product();
+    	product2.setId(new Random().nextLong());
+    	product2.setName(PRODUCT_NAME + "MDF");
+    	product2.setDescription(PRODUCT_DESCRIPTION + "MDF");
+    	product2.setCategory(product.getCategory());
+    	productDao.save(product2);
+    	
+    	Product product3 = new Product();
+    	product3.setId(new Random().nextLong());
+    	product3.setName(PRODUCT_NAME + "MDF3");
+    	product3.setDescription(PRODUCT_DESCRIPTION + "MDF3");
+    	product3.setCategory(product.getCategory());
+    	productDao.save(product3);
+    	
+    	Iterable<Product> iter = productDao.findByCategoryName(product.getCategory().getName());
+    	List<Product> lst = new ArrayList<Product>();
+    	for(Product obj:iter){
+    		lst.add(obj);
+    	}
+    	assertTrue(getIterableSize(iter) == 3);
+    	assertEquals(product.getCategory(), lst.get(0).getCategory());
+    	assertEquals(product2.getCategory(), lst.get(1).getCategory());
+    	assertEquals(product3.getCategory(), lst.get(2).getCategory());
     }        
 	
 	

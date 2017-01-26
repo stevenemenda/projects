@@ -12,6 +12,6 @@ public class Ping extends GenericServlet {
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
         PrintWriter writer = servletResponse.getWriter();
-        writer.println("pong");
+        writer.println("pong-pong");
     }
 }

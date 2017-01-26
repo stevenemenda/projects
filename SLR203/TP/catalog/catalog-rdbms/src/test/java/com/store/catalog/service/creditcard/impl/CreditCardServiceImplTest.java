@@ -6,7 +6,7 @@ import com.store.catalog.model.CreditCardDTO;
 import com.store.catalog.model.VerifCCResult;
 
 import ch.qos.logback.core.joran.spi.NoAutoStart;
-
+import java.util.regex.Pattern;
 import static org.junit.Assert.*;
 
 /**
@@ -75,4 +75,5 @@ public class CreditCardServiceImplTest {
     	creditCardDto.setCreditCardNumber("4563960122001998");
     	ccsi.verifyCreditCard(creditCardDto);
     }
+    
 }

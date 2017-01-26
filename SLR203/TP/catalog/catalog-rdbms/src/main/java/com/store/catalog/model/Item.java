@@ -10,7 +10,9 @@ import javax.persistence.*;
  * This class encapsulates all the data for an Item.
  *
  */
-
+@Entity
+@Table(name="T_ITEM")
+@Access(AccessType.FIELD)
 public class Item implements AbstractBean {
 
     /**
@@ -20,23 +22,26 @@ public class Item implements AbstractBean {
 	// ======================================
     // =             Attributes             =
     // ======================================
-
-
+	
+	// define a column and the key of the table T_ITEM
+	@Id
+	@Column(name="id")
     private Long id;
 
-
+	@Column(name="name")
     private String name;
-
-
+	// define a new column with a name 
+	@Column(name="unitCost")
     private double unitCost;
 
-
+	@Column(name="imagePath")
     private String imagePath;
-
-
+	// declare la relation manyToOne vers la classe Product
+	@ManyToOne
+	@JoinColumn(name="product_fk", nullable = false)
     private Product product;
 
-    // ======================================
+    // ===============================type=======
     // =            Constructors            =
     // ======================================
     public Item() {

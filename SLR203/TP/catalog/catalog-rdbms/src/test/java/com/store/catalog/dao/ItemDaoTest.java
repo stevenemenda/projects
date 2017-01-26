@@ -1,6 +1,8 @@
 package com.store.catalog.dao;
 
 import com.store.catalog.model.Product;
+import com.store.catalog.utils.ConstantUtils;
+
 import com.store.catalog.model.Category;
 import com.store.catalog.model.Item;
 import org.junit.After;
@@ -8,6 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import static com.store.catalog.utils.ConstantUtils.*;
@@ -45,42 +49,131 @@ public class ItemDaoTest extends AbstractBaseDaoTestCase {
 
     @Test
     public void testCreateItem() throws Exception {
-        throw new Exception("not yet implemented");
+    	itemDao.save(item);
+    	assertTrue("primary key assigned", item.getId() != null);
     }
 
 
     @Test
     public void testUpdateItem() throws Exception {
-        throw new Exception("not yet implemented");
+    	itemDao.save(item);
+    	
+    	item.setName(ConstantUtils.ITEM_NAME + "MDF");
+    	item.setImagePath(ConstantUtils.ITEM_IMAGE_PATH + "MDF");
+    	item.setUnitCost(ConstantUtils.ITEM_PRICE + 20d);
+    	item.setProduct(getProduct());
+    	
+    	itemDao.save(item);
+    	
+    	Item itemMdf = itemDao.findOne(item.getId());
+    	assertEquals(item, itemMdf);
     }
 
     @Test
     public void testGetItem() throws Exception {
-        throw new Exception("not yet implemented");
+    	
+    	itemDao.save(item);
+    	
+    	Item item2 = itemDao.findOne(item.getId());
+    	
+    	assertNotNull(item2);
+    	assertEquals(item,  item2);
     }
 
 
     @Test
     public void testRemoveItem() throws Exception {
-        throw new Exception("not yet implemented");
+    	
+    	itemDao.save(item);
+    	
+    	Item item2 = itemDao.findOne(item.getId());
+    	
+    	assertNotNull(item2.getId());
+    	assertEquals(item,  item2);
+    	
+    	itemDao.delete(item.getId());
+    	
+    	assertTrue(getIterableSize(itemDao.findAll()) == 0);
     }
 
 
     @Test
     public void testGetItems() throws Exception {
-        throw new Exception("not yet implemented");
+
+    	itemDao.save(item);
+    	
+    	Iterable<Item> lst = itemDao.findAll();
+    	
+    	assertTrue(getIterableSize(itemDao.findAll()) == 1);
+    	
+    	Item item2 = new Item();
+    	item2.setId(new Random().nextLong());
+    	item2.setName(ConstantUtils.ITEM_NAME + "MDF");
+    	item2.setImagePath(ConstantUtils.ITEM_IMAGE_PATH + "MDF");
+    	item2.setUnitCost(ConstantUtils.ITEM_PRICE + 20d);
+        item2.setProduct(getProduct());
+    	itemDao.save(item2);
+    	
+    	assertTrue(getIterableSize(itemDao.findAll()) == 2);
     }
 
 
     @Test
     public void testGetItemsWithProductId() throws Exception {
-        throw new Exception("not yet implemented");
+        
+    	itemDao.save(item);
+    	
+    	Item item2 = new Item();
+    	item2.setId(new Random().nextLong());
+    	item2.setName(ConstantUtils.ITEM_NAME + "MDF");
+    	item2.setImagePath(ConstantUtils.ITEM_IMAGE_PATH + "MDF");
+    	item2.setUnitCost(ConstantUtils.ITEM_PRICE + 20d);
+        item2.setProduct(item.getProduct());
+    	itemDao.save(item2);
+    	
+    	Iterable<Item> iter = itemDao.findByProductId(item.getProduct().getId());
+    	List<Item> lst = new ArrayList<Item>();
+    	for(Item obj:iter){
+    		lst.add(obj);
+    	}
+    	assertTrue(getIterableSize(iter) == 2);
+    	assertEquals(item, lst.get(0));
+    	assertEquals(item2, lst.get(1));
+    	
     }
 
 
     @Test
     public void testSearchItem() throws Exception {
-        throw new Exception("not yet implemented");
+    	
+		itemDao.save(item);
+    	
+    	Item item2 = new Item();
+    	item2.setId(new Random().nextLong());
+    	item2.setName(ConstantUtils.ITEM_NAME + "MDF1");
+    	item2.setImagePath(ConstantUtils.ITEM_IMAGE_PATH + "MDF");
+    	item2.setUnitCost(ConstantUtils.ITEM_PRICE + 20d);
+        item2.setProduct(item.getProduct());
+    	itemDao.save(item2);
+    	
+    	Item item3 = new Item();
+    	item3.setId(new Random().nextLong());
+    	item3.setName(ConstantUtils.ITEM_NAME + "MDF2");
+    	item3.setImagePath(ConstantUtils.ITEM_IMAGE_PATH + "MDF");
+    	item3.setUnitCost(ConstantUtils.ITEM_PRICE + 20d);
+        item3.setProduct(item.getProduct());
+    	itemDao.save(item3);
+    	
+    	Iterable<Item> iter = itemDao.findByNameContaining(ConstantUtils.ITEM_NAME);
+    	List<Item> lst = new ArrayList<Item>();
+    	for(Item obj:iter){
+    		lst.add(obj);
+    	}
+    	assertTrue(getIterableSize(iter) == 3);
+    	assertEquals(item.getProduct(), lst.get(0).getProduct());
+    	assertEquals(item2.getProduct(), lst.get(1).getProduct());
+    	assertEquals(item3.getProduct(), lst.get(2).getProduct());
+    	
     }
     
     
