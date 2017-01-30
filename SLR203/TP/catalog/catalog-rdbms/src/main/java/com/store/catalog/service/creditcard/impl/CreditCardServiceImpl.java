@@ -27,25 +27,6 @@ public class CreditCardServiceImpl implements CreditCardService {
     		throw new NumberFormatException(INVALIDE_CARD_NUMBER);
     	}
     	
-    	if(strCard.equals("0")){
-    		return VerifCCResult.OK;
-    	}
-    	
-    	if(strCard.equals("34")){
-    		return VerifCCResult.OK;
-    	}
-    	
-    	if(strCard.equals("042")){
-    		return VerifCCResult.OK;
-    	}
-    	
-    	if(strCard.equals("972487086")){
-    		return VerifCCResult.OK;
-    	}
-    	
-    	if(strCard.equals("927487087")){
-    		return VerifCCResult.KO;
-    	}
     	int sum = 0;
     	boolean doMul = false;
     	
@@ -63,7 +44,7 @@ public class CreditCardServiceImpl implements CreditCardService {
     	}
     	
     	if( ( sum % 10 ) != 0){
-    		 throw new NumberFormatException(INVALIDE_CARD_NUMBER);
+    		 return VerifCCResult.KO;
     	}else{
     		return VerifCCResult.OK;
     	}

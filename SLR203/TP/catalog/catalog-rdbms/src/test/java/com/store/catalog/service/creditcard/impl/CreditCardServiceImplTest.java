@@ -70,10 +70,10 @@ public class CreditCardServiceImplTest {
     	assertEquals(VerifCCResult.OK, ccsi.verifyCreditCard(creditCardDto));
     }
     
-    @Test(expected = NumberFormatException.class)
+    @Test
     public void testVerifyCreditCard9() throws Exception {
     	creditCardDto.setCreditCardNumber("4563960122001998");
-    	ccsi.verifyCreditCard(creditCardDto);
+    	assertEquals(VerifCCResult.KO, ccsi.verifyCreditCard(creditCardDto));
     }
     
 }

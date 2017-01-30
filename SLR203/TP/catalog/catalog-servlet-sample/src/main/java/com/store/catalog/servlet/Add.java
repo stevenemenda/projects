@@ -29,11 +29,16 @@ public class Add extends HttpServlet {
 		// TODO Auto-generated method stub
 		PrintWriter writer = response.getWriter();
 		writer.append("Served at: ").append(request.getContextPath());
+		writer.append("\n Method: " + request.getMethod());
 		String sa = request.getParameter("param1");
-		double a = Double.valueOf(sa);
+		int a = Integer.valueOf(sa);
 		
 		String sb = request.getParameter("param2");
-		double b = Double.valueOf(sb);
+		int b = Integer.valueOf(sb);
+		
+		int result = a + b;
+		
+		writer.append("\n " + a + " + " + b + " = " + result);
 		
 	}
 
@@ -42,7 +47,22 @@ public class Add extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		PrintWriter writer = response.getWriter();
+		writer.append("Served at: ").append(request.getContextPath());
+		writer.append("\n Method: " + request.getMethod());
+		String req = request.getReader().readLine();
+		String  [] lst  = req.split("[+]");
+		int len = lst.length;
+		int result = Integer.MIN_VALUE;
+		if(len >= 2){
+			result = Integer.valueOf(lst[0]) + Integer.valueOf(lst[1]);
+		}
+		if(result  != Integer.MIN_VALUE){
+			writer.append("\n " + lst[0] + " + " + lst[1] + " = " + result);
+		}else{
+			writer.append("\n Error, please check params: " + lst[0] + " " + lst[1]);
+		}
+		
 	}
 
 }

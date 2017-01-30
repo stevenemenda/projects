@@ -80,6 +80,7 @@ public class CatalogServiceImpl implements CatalogService {
 	// = Product Business methods =
 	// ======================================
 	// DTO: data transferring object
+//	@Transactional
 	public ProductDTO createProduct(ProductDTO productDto) throws CheckException {
 		if (productDto == null)
             throw new CheckException("Product object is null");
@@ -177,7 +178,7 @@ public class CatalogServiceImpl implements CatalogService {
     // =        Item Business methods       =
     // ======================================	
 	
-	@Transactional
+//	@Transactional
 	public ItemDTO createItem(ItemDTO itemDto) throws CheckException {
 		if(itemDto == null){
 			throw new CheckException("Item object is null");
@@ -276,7 +277,7 @@ public class CatalogServiceImpl implements CatalogService {
     // ======================================	
 	
 	
-	@Transactional
+//	@Transactional
 	public CategoryDTO createCategory(CategoryDTO categoryDto) throws CheckException {
 		if (categoryDto == null)
             throw new CheckException("Category object is null");

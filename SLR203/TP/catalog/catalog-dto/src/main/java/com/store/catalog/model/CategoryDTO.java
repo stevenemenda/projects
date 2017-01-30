@@ -4,6 +4,8 @@ import org.apache.commons.lang.builder.EqualsBuilder;
 import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,8 +29,8 @@ public  class CategoryDTO implements AbstractBean {
     private String name;
     private String description;
 
-    //@JsonManagedReference
-    private Set<ProductDTO> products ;
+    @JsonManagedReference
+    private Set<ProductDTO> products;
 
     // ======================================
     // =            Constructors            =
