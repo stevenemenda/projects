@@ -1,6 +1,7 @@
 package com.store.catalog.ws.rest.view.rdbms;
 
 import com.fasterxml.jackson.core.JsonParseException;
+
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
@@ -24,14 +25,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
-import static com.store.catalog.utils.ConstantUtils.ITEM_IMAGE_PATH;
-import static com.store.catalog.utils.ConstantUtils.ITEM_NAME;
-import static com.store.catalog.utils.ConstantUtils.ITEM_PRICE;
-import static com.store.catalog.utils.ConstantUtils.PRODUCT_DESCRIPTION;
-import static com.store.catalog.utils.ConstantUtils.PRODUCT_NAME;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
 
+@Ignore
 public class CatalogResourceIntegrationTest{
 
     private ObjectMapper mapper = new ObjectMapper();
@@ -259,8 +256,8 @@ curl -i http://localhost:8080/catalog/catalog/category/20 -H "Content-Type: appl
     private ProductDTO createProduct() {
         ProductDTO product = new ProductDTO();
         product.setId(new Random().nextLong() + 1000);
-    	product.setName(PRODUCT_NAME);
-    	product.setDescription(PRODUCT_DESCRIPTION);
+    	product.setName(ConstantUtils.PRODUCT_NAME);
+    	product.setDescription(ConstantUtils.PRODUCT_DESCRIPTION);
     	product.setCategory(lsCats.get(0));
     	product.setItems(null);
         return product;
@@ -269,9 +266,9 @@ curl -i http://localhost:8080/catalog/catalog/category/20 -H "Content-Type: appl
     private ItemDTO createItem() {
         ItemDTO item = new ItemDTO();            
         item.setId(new Random().nextLong() + 100);
-        item.setName(ITEM_NAME);
-        item.setImagePath(ITEM_IMAGE_PATH);
-        item.setUnitCost(ITEM_PRICE);
+        item.setName(ConstantUtils.ITEM_NAME);
+        item.setImagePath(ConstantUtils.ITEM_IMAGE_PATH);
+        item.setUnitCost(ConstantUtils.ITEM_PRICE);
         item.setProduct(lsPros.get(0));
         return item;
     }
